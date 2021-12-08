@@ -1,0 +1,19 @@
+.content{
+    border: solid 1px black;
+    border-radius: 20px;
+    width: 70vw;
+    padding:20px;
+    display:flex;
+    flex-wrap: wrap;
+    background-color: rgba(256,256,256,50%);
+    margin:auto;
+}
+
+.room {
+    width:150px;
+    background-color: #d8f9ff;
+    border: solid 1px saddlebrown;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+}

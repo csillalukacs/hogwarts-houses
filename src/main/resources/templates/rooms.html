@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms</title>
+    <th:block th:replace="fragments :: fonts"/>
+    <link th:href="@{/css/common.css}" rel="stylesheet"/>
+    <link th:href="@{/css/rooms.css}" rel="stylesheet"/>
+</head>
+<body th:style="'background: url(/img/background.jpg) no-repeat center center fixed;'">
+<div th:replace="fragments :: navbar"></div>
+<h1>Rooms</h1>
+<div class="content">
+    <div class="room" th:each="room: ${rooms}">
+        <p><a th:text="${room.name}" th:href="'/room/' + ${room.id}"></a></p>
+    </div>
+</div>
+</body>
+</html>
