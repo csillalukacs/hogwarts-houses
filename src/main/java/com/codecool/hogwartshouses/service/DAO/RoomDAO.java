@@ -8,4 +8,6 @@ public interface RoomDAO {
     void add(Room room);
     Collection<Room> getAll();
     Room find(int id);
+
+    void delete(int id);
 }

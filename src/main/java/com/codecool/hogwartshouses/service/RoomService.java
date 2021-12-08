@@ -24,4 +24,8 @@ public class RoomService {
     public Room find(int id){
         return roomDAO.find(id);
     }
+
+    public void delete(int id) {
+        roomDAO.delete(id);
+    }
 }

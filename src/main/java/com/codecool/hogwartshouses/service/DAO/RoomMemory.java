@@ -32,4 +32,9 @@ public class RoomMemory implements RoomDAO {
                 .filter((room)->room.getId()==id)
                 .collect(Collectors.toList()).get(0);
     }
+
+    @Override
+    public void delete(int id) {
+        rooms.remove(find(id));
+    }
 }
