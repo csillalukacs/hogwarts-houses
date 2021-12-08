@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Repository
 public class RoomMemory implements RoomDAO {
@@ -23,5 +24,12 @@ public class RoomMemory implements RoomDAO {
     @Override
     public Collection<Room> getAll() {
         return rooms;
+    }
+
+    @Override
+    public Room find(int id) {
+        return rooms.stream()
+                .filter((room)->room.getId()==id)
+                .collect(Collectors.toList()).get(0);
     }
 }

@@ -20,4 +20,8 @@ public class RoomService {
     public void add(Room room){
         roomDAO.add(room);
     }
+
+    public Room find(int id){
+        return roomDAO.find(id);
+    }
 }
