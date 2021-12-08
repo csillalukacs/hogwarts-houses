@@ -2,15 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Hogwarts Houses</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
-    <link th:href="@{/css/greeting.css}" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Benne&text=%E2%98%9E" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Benne&family=Mountains+of+Christmas:wght@700&family=Princess+Sofia&display=swap" rel="stylesheet">
+
+    <link th:href="@{/css/greeting.css}" rel="stylesheet"/>
 </head>
 <body th:style="'background: url(/img/background.jpg) no-repeat center center fixed;'">
 <p th:text="'Hello, ' + ${name} + '!'" class="shimmer"></p>
+<div class="menu">
+<p class="link">
+    <a th:href="'/rooms'">
+        <span class="icon"> ☞ </span>
+        <span class="text">see rooms</span>
+    </a>
+</p><p class="link">
+    <a th:href="'/rooms'">
+        <span class="icon"> ☞ </span>
+        <span class="text">another menu item</span>
+    </a>
+</p>
+</div>
 </body>
 </html>
