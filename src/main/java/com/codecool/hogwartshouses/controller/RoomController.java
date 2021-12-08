@@ -24,14 +24,20 @@ public class RoomController {
         roomService.add(room);
     }
 
-    @GetMapping("/room/{id}")
     @ResponseBody
+    @GetMapping("/room/{id}")
     public Room getRoom(@PathVariable int id){
         return roomService.find(id);
     }
 
-    @DeleteMapping("/room/{id}")
     @ResponseBody
+    @PutMapping("/room/{id}")
+    public void updateRoom(@PathVariable int id, @RequestBody Room room){
+        roomService.update(id, room);
+    }
+
+    @ResponseBody
+    @DeleteMapping("/room/{id}")
     public void deleteRoom(@PathVariable int id){
         roomService.delete(id);
     }

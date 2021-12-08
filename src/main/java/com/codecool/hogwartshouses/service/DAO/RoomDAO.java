@@ -10,4 +10,6 @@ public interface RoomDAO {
     Room find(int id);
 
     void delete(int id);
+
+    void update(int id, Room newRoom);
 }

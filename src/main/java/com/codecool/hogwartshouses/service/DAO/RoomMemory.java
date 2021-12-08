@@ -37,4 +37,11 @@ public class RoomMemory implements RoomDAO {
     public void delete(int id) {
         rooms.remove(find(id));
     }
+
+    @Override
+    public void update(int id, Room newRoom) {
+        Room room = find(id);
+        String name = newRoom.getName();
+        room.setName(name);
+    }
 }

@@ -28,4 +28,8 @@ public class RoomService {
     public void delete(int id) {
         roomDAO.delete(id);
     }
+
+    public void update(int id, Room newRoom) {
+        roomDAO.update(id, newRoom);
+    }
 }
