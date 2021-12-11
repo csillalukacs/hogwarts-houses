@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+
 @Controller
 public class RoomController {
     @Autowired
@@ -19,6 +21,12 @@ public class RoomController {
     public String getRooms(Model model){
         model.addAttribute("rooms", roomService.getAll());
         return "rooms";
+    }
+
+    @ResponseBody
+    @GetMapping("/rooms/available")
+    public Collection<Room> getAvailableRooms(){
+        return roomService.findAvailable();
     }
 
     @PostMapping("/rooms")

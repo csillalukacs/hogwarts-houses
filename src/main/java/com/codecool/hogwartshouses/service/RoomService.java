@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 @Service
 public class RoomService {
@@ -42,5 +43,10 @@ public class RoomService {
         if (room.isDorm()){
             room.getOccupants().add(student);
         }
+    }
+
+    public Collection<Room> findAvailable() {
+        roomDAO.getAll().forEach(System.out::println);
+        return roomDAO.getAll().stream().filter(Room::isDorm).collect(Collectors.toList());
     }
 }

@@ -19,5 +19,6 @@ public class Room {
     public Room(String name, Collection<Student> occupants, boolean dorm) {
         this.occupants = occupants;
         this.name = name;
+        this.dorm = dorm;
     }
 }
