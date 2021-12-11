@@ -13,6 +13,9 @@
 <div class="content">
     <div class="room" th:each="room: ${rooms}">
         <p><a th:text="${room.name}" th:href="'/room/' + ${room.id}"></a></p>
+        <ul>
+            <li th:each="student: ${room.occupants}" th:text="${student.name}"></li>
+        </ul>
     </div>
 </div>
 </body>

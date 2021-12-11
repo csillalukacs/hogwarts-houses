@@ -4,6 +4,8 @@ import com.codecool.hogwartshouses.model.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Repository
 public class StudentMemory implements StudentDAO {
@@ -28,6 +30,12 @@ public class StudentMemory implements StudentDAO {
     @Override
     public Student find(int id) {
         return null;
+    }
+
+    public Student find(String name){
+        return students.stream()
+                .filter((student)-> Objects.equals(student.getName(), name))
+                .collect(Collectors.toList()).get(0);
     }
 
     @Override

@@ -4,15 +4,15 @@ import com.codecool.hogwartshouses.model.Room;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
-import java.util.Set;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Repository
 public class RoomMemory implements RoomDAO {
 
-    private final Set<Room> rooms;
+    private final Collection<Room> rooms;
 
-    public RoomMemory(Set<Room> rooms) {
+    public RoomMemory(Collection<Room> rooms) {
         this.rooms = rooms;
     }
 
@@ -30,6 +30,12 @@ public class RoomMemory implements RoomDAO {
     public Room find(int id) {
         return rooms.stream()
                 .filter((room)->room.getId()==id)
+                .collect(Collectors.toList()).get(0);
+    }
+
+    public Room find(String name){
+        return rooms.stream()
+                .filter((room)-> Objects.equals(room.getName(), name))
                 .collect(Collectors.toList()).get(0);
     }
 
