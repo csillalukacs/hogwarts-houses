@@ -2,6 +2,7 @@ package com.codecool.hogwartshouses.data_sample;
 
 import com.codecool.hogwartshouses.model.Room;
 import com.codecool.hogwartshouses.model.Student;
+import com.codecool.hogwartshouses.model.types.PetType;
 import com.codecool.hogwartshouses.service.DAO.RoomMemory;
 import com.codecool.hogwartshouses.service.DAO.StudentMemory;
 import org.springframework.stereotype.Component;
@@ -27,8 +28,8 @@ public class RoomCreator {
         roomMemory.add(new Room("The Library", new HashSet<>(), false));
         roomMemory.add(new Room("Snape's Office", new HashSet<>(), false));
         roomMemory.add(new Room("The Astronomy Room", new HashSet<>(), false));
-        Student hermione = new Student("Hermione Granger");
-        Student draco = new Student("Draco Malfoy");
+        Student hermione = new Student("Hermione Granger", PetType.CAT);
+        Student draco = new Student("Draco Malfoy", PetType.OWL);
         studentMemory.add(draco);
         studentMemory.add(hermione);
         Room slytherin7 = new Room("Slytherin Dorm Room 7", new HashSet<>(), true);

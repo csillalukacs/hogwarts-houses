@@ -2,6 +2,7 @@ package com.codecool.hogwartshouses.service;
 
 import com.codecool.hogwartshouses.model.Room;
 import com.codecool.hogwartshouses.model.Student;
+import com.codecool.hogwartshouses.model.types.PetType;
 import com.codecool.hogwartshouses.service.DAO.RoomDAO;
 import com.codecool.hogwartshouses.service.DAO.StudentDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,12 @@ public class RoomService {
     }
 
     public Collection<Room> findAvailable() {
-        roomDAO.getAll().forEach(System.out::println);
         return roomDAO.getAll().stream().filter(Room::isDorm).collect(Collectors.toList());
+    }
+
+    public Collection<Room> byPetType(PetType pet){
+        return findAvailable().stream()
+                .filter((room)->room.getOccupants().stream().allMatch(s->s.getPet()==pet))
+                .collect(Collectors.toList());
     }
 }

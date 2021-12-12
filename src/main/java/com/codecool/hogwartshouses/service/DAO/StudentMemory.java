@@ -13,8 +13,6 @@ public class StudentMemory implements StudentDAO {
 
     public StudentMemory(Collection<Student> students) {
         this.students = students;
-        System.out.println(students.getClass());
-        System.out.println(students.size());
     }
 
     @Override

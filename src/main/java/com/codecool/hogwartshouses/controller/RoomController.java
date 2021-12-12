@@ -1,6 +1,7 @@
 package com.codecool.hogwartshouses.controller;
 
 import com.codecool.hogwartshouses.model.Room;
+import com.codecool.hogwartshouses.model.types.PetType;
 import com.codecool.hogwartshouses.service.RoomService;
 import com.codecool.hogwartshouses.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +24,18 @@ public class RoomController {
         return "rooms";
     }
 
-    @ResponseBody
     @GetMapping("/rooms/available")
-    public Collection<Room> getAvailableRooms(){
-        return roomService.findAvailable();
+    public String getAvailableRooms(Model model){
+        Collection<Room> rooms =  roomService.findAvailable();
+        model.addAttribute("rooms", rooms);
+        return "rooms";
+    }
+
+    @GetMapping("/rooms/rat-owners")
+    public String ratOwners(Model model){
+        Collection<Room> rooms = roomService.byPetType(PetType.RAT);
+        model.addAttribute("rooms", rooms);
+        return "rooms";
     }
 
     @PostMapping("/rooms")
