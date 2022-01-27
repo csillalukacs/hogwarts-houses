@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/52175603/151331656-245a38e0-565a-4a62-b1ee-41d97bf88525.png)
+
+
 # Hogwarts Houses - sprint 1
 
 ## Story
